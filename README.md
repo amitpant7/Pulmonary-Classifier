@@ -1,22 +1,22 @@
 # Pulmonary Disease Classification from X-Rays
-Access Notebook : [here](https://github.com/amitpant7/Pulmonary-Classifier/blob/main/Model-%20ML/final_model_notebook.ipynb)
-Kaggle: [link](https://www.kaggle.com/code/amitpant7/lung-vision-classify-pnemonia-and-tb#Incpetion-V3-training)
+- Access Notebook : [here](https://github.com/amitpant7/Pulmonary-Classifier/blob/main/Model-%20ML/final_model_notebook.ipynb)
+- Kaggle: [link](https://www.kaggle.com/code/amitpant7/lung-vision-classify-pnemonia-and-tb#Incpetion-V3-training)
+- Access Detailed Report: [Report](https://github.com/amitpant7/Pulmonary-Classifier/blob/main/Project%20Report.pdf) 
 
-## About the Dataset
+## 1. About the Dataset
 The entire dataset can be found here: https://www.kaggle.com/datasets/amitpant7/lungvision 
 ![image](https://github.com/amitpant7/Pulmonary-Classifier/assets/50907565/6b5ed6a3-039a-4959-b2c7-be7e3d1d3803)
 
-Two models Resnet-50 and Inception V3 were trained on  X-Ray images from various sources to classify among Normal, Pneumonia, and Tuberculosis classes.
+Two models Resnet-50 and Inception V3 were trained on  X-ray images from various sources to classify among Normal, Pneumonia, and Tuberculosis classes.
 
-![plot](https://raw.githubusercontent.com/rajinkhatri/Pulmonary-Classifier/main/Frontend/src/images/page1.png)
 We compiled a dataset of lung images to train and evaluate deep-learning models for diagnosing lung infections. Initially, our dataset included 10,406 Normal, 5,775 Pneumonia, and 1,094 Tuberculosis-infected images, sourced from RSNA, Montgomery County chest X-ray set, Shenzhen chest X-ray, Qatar University, Doha, and the University of Dhaka. These images were originally in DCM format, and we converted them to PNG format to ensure compatibility with our deep learning models.
 ![image](https://github.com/amitpant7/Pulmonary-Classifier/assets/50907565/ff56a2d3-3285-49fb-90b4-d9521b00e2be)
 
 During the data cleaning process, we identified that anomalous images adversely affected our model's performance, especially leading to the misclassification of Normal images as Pneumonia. To address this, we manually removed blurry, low-resolution images, or partially contained lungs. We also checked for and removed under-penetrated and over-penetrated images, as these issues obscured critical lung details and increased the risk of missing abnormalities. After this thorough cleaning, our final dataset consisted of 7,509 Normal images, 5,775 Pneumonia, and 1,094 Tuberculosis-infected images.
 
-## Model Implementation and Training
+## 2. Model Implementation and Training
 
-### Resnet-50 Implementation
+### 2.1 Resnet-50 Implementation
 We used a pretrained Resnet-50 model for further training by replacing its fully connected layers. Various configurations were tested, and based on their results, the model was fine-tuned to maximize performance.
 
 The pre-trained model was imported from Keras with weights trained on the ImageNet dataset. We replaced the last fully connected layers with new layers, including a final output linear layer with 3 units. To prevent the earlier layers from being updated during training, we froze the weights of the convolutional layers by setting the 'trainable' attribute to False.
@@ -29,7 +29,7 @@ Non-trainable parameters: 23,594,368
 Class weights: 0.63819127, 0.8298697, 4.38474946
 To enhance model performance on TB and Pneumonia, class weights were assigned during training to prevent the model from overfitting on the majority class. The class weights were computed, and with some changes in the fully connected layer and augmentation techniques, the model was retrained.
 
-### Inception-v3 Implementation
+### 2.2 Inception-v3 Implementation
 For the Inception-v3 model, we adjusted the original input shape from (229,229,3) to (224,224,3). Similar to Resnet-50, we replaced the fully connected layers with our own hidden layers and a final classification layer, implementing a comparable approach to establish a baseline for comparison.
 
 Total parameters: 24,177,443
@@ -41,7 +41,7 @@ We applied the same training strategy as Resnet-50, testing different configurat
 Data augmentation techniques were used, and class weights were assigned and optimized to improve the model's performance in identifying pneumonia and tuberculosis.
 
 
-## Results and Findings 
+## 3. Results and Findings 
 Impact of Large Dataset and Augmentation:
 
 We observed that our models were quickly overfitting when trained on a smaller dataset. To address this, we used a larger dataset and data augmentation techniques. This approach led to positive results:
@@ -78,8 +78,9 @@ People Involved in this project
 - [Sujan Lamichhane](https://github.com/nextlevel7)
 
 
-## Model Inferencing
-You can replicate the work and inference for new x-rays by following the procedure below.
+## 4. Model Inferencing
+You can replicate the work and inference for new X-rays by following the procedure below.
+![plot](https://raw.githubusercontent.com/rajinkhatri/Pulmonary-Classifier/main/Frontend/src/images/page1.png)
 
 ## Installation
 
