@@ -1,4 +1,6 @@
-# Pulmonary Disease Classification from X-Rays
+# Identifying Pulmonary Diseases(TB and Pneumonia) through Chest Scans
+Lung disease, also known as pulmonary disease, is a broad term that refers to any condition that affects the lungs and impairs their ability to function properly. X-ray may show changes in the appearance of lungs which may be due to certain diseases. In this work, we utilize chest X-ray as input and employ two different CNN models (Resnet50 and Inception-v3) for classification task. The goal is to accurately identify if the person has Tuberculosis, Pneumonia or Healthy lungs. The performance of the two models was evaluated using the lung image of patients diagnosed with the mentioned diseases. The evaluation metrics used are accuracy, precision, and recall. This project demonstrates the potential of CNNs in the accurate and efficient diagnosis of lung diseases using chest X-ray images and highlights the importance of comparing different models for a given task
+
 - Access Notebook : [here](https://github.com/amitpant7/Pulmonary-Classifier/blob/main/Model-%20ML/final_model_notebook.ipynb)
 - Kaggle: [link](https://www.kaggle.com/code/amitpant7/lung-vision-classify-pnemonia-and-tb#Incpetion-V3-training)
 - Access Detailed Report: [Report](https://github.com/amitpant7/Pulmonary-Classifier/blob/main/Project%20Report.pdf) 
