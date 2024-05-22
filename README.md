@@ -72,6 +72,7 @@ The graphs indicate that the models learned quickly from the cleaned data. Resne
 
 From the above table, it’s clear that the Inception-v3 performs better than Resnet-50 over almost all the parameter. The precision, recall and accuracy value for the different classes of the classification has better values with Inception-v3 rather than Resnet-50. Due to this, our final classification model has been chosen as Inception over Resnet. These images showed similar results for the dataset with bad images. When these models were trained over a proper dataset, Inception performed better and showed better results. While the difference between these two models is only of 3%, this number can’t be overlooked when we are working with medical image as a minor inconvenience in the result can result in a huge problem for both the doctors and the patients
 
+https://youtu.be/7Qor2YACcls 
 
 People Involved in this project
 - [Amit Raj Pant](https://github.com/amitpant7)
